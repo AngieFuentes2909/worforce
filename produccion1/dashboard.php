@@ -41,7 +41,7 @@ $connect->close();
 		<div class="panel panel-success">
 			<div class="panel-heading">
 				
-				<a href="product.php" style="text-decoration:none;color:black;">
+				<a href="product.php" style="text-decoration:none;color:#ffffff;">
 					Total de productos
 					<span class="badge pull pull-right"><?php echo $countProduct; ?></span>	
 				</a>
@@ -53,7 +53,7 @@ $connect->close();
 		<div class="col-md-4">
 			<div class="panel panel-info">
 			<div class="panel-heading">
-				<a href="orders.php?o=manord" style="text-decoration:none;color:black;">
+				<a href="orders.php?o=manord" style="text-decoration:none;color:#ffffff;">
 					Total ordenes
 					<span class="badge pull pull-right"><?php echo $countOrder; ?></span>
 				</a>
@@ -65,7 +65,7 @@ $connect->close();
 	<div class="col-md-4">
 		<div class="panel panel-danger">
 			<div class="panel-heading">
-				<a href="product.php" style="text-decoration:none;color:black;">
+				<a href="product.php" style="text-decoration:none;color:#ffffff;">
 					Inventario bajo
 					<span class="badge pull pull-right"><?php echo $countLowStock; ?></span>	
 				</a>

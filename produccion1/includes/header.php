@@ -44,7 +44,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <!-- <a class="navbar-brand" href="#">Brand</a> -->
+      <a class="navbar-brand" href="dashboard.php" style="color: #ffffff; font-size: 20px; font-weight: 700; background: linear-gradient(to right, #ffffff, #00f2fe); -webkit-background-clip: text; -webkit-text-fill-color: transparent; padding: 15px 0;">Workforce ERP</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->

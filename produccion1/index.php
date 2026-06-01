@@ -80,7 +80,7 @@ if($_POST) {
 	<div class="container">
 		<div class="row vertical">
 			<div class="col-md-5 col-md-offset-4">
-				<div class="panel panel-info">
+				<div class="panel panel-info" id="loginFormPanel">
 					<div class="panel-heading">
 						<h3 class="panel-title">Inicio de sesión</h3>
 					</div>

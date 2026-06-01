@@ -9,24 +9,21 @@ if($_POST) {
 $productId = $_POST['productId'];
  
 $type = explode('.', $_FILES['editProductImage']['name']);
-	$type = $type[count($type)-1];		
-	$url = '../assests/images/stock/'.uniqid(rand()).'.'.$type;
-	if(in_array($type, array('gif', 'jpg', 'jpeg', 'png', 'JPG', 'GIF', 'JPEG', 'PNG'))) {
+	$type = strtolower($type[count($type)-1]);		
+	if(in_array($type, array('gif', 'jpg', 'jpeg', 'png'))) {
 		if(is_uploaded_file($_FILES['editProductImage']['tmp_name'])) {			
-			if(move_uploaded_file($_FILES['editProductImage']['tmp_name'], $url)) {
+			$imgData = base64_encode(file_get_contents($_FILES['editProductImage']['tmp_name']));
+			$src = 'data:image/' . $type . ';base64,' . $imgData;
 
-				$sql = "UPDATE product SET product_image = '$url' WHERE product_id = $productId";				
+			$sql = "UPDATE product SET product_image = '$src' WHERE product_id = $productId";				
 
-				if($connect->query($sql) === TRUE) {									
-					$valid['success'] = true;
-					$valid['messages'] = "Actualizado exitosamente";	
-				} else {
-					$valid['success'] = false;
-					$valid['messages'] = "Error no se ha podido actualizar";
-				}
-			}	else {
-				return false;
-			}	// /else	
+			if($connect->query($sql) === TRUE) {									
+				$valid['success'] = true;
+				$valid['messages'] = "Actualizado exitosamente";	
+			} else {
+				$valid['success'] = false;
+				$valid['messages'] = "Error no se ha podido actualizar";
+			}
 		} // if
 	} // if in_array 		
 	 

@@ -29,6 +29,10 @@
         <link rel="stylesheet" type="text/css" href="css/responsive.css" media="all" />
         <!-- Favicon Icon -->
         <link rel="icon" type="image/png"  href="img/favcion.png" />
+        <!-- Google Fonts - Outfit & Inter -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
         <!--[if lt IE 9]>
           <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
           <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -62,7 +66,189 @@
         </header><!-- header section end -->
         <!-- hero area start -->
         <style>
+            /* Modern typography & Global overrides */
+            body {
+                font-family: 'Inter', sans-serif !important;
+                background-color: #0b0f17 !important;
+                color: #e6edf3 !important;
+            }
+            h1, h2, h3, h4, h5, h6 {
+                font-family: 'Outfit', sans-serif !important;
+                color: #ffffff !important;
+            }
 
+            /* Sleek Glassmorphic Header */
+            .header {
+                background: rgba(11, 15, 23, 0.7) !important;
+                backdrop-filter: blur(16px) saturate(180%);
+                -webkit-backdrop-filter: blur(16px) saturate(180%);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+                box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2) !important;
+                transition: all 0.3s ease;
+            }
+            .mainmenu ul li a {
+                color: rgba(255, 255, 255, 0.8) !important;
+                font-size: 15px !important;
+                font-weight: 500 !important;
+                transition: color 0.3s ease !important;
+            }
+            .mainmenu ul li a:hover, .mainmenu ul li a.active {
+                color: #00f2fe !important;
+            }
+
+            /* Sleek Hero Area */
+            .hero-area {
+                background: linear-gradient(135deg, #0b0f17 0%, #1a2333 100%) !important;
+                position: relative;
+                overflow: hidden;
+                padding: 180px 0 120px 0 !important;
+            }
+            .hero-area::before {
+                content: '';
+                position: absolute;
+                top: -10%;
+                right: -10%;
+                width: 400px;
+                height: 400px;
+                background: radial-gradient(circle, rgba(0, 242, 254, 0.15) 0%, rgba(0, 242, 254, 0) 70%);
+                filter: blur(50px);
+                pointer-events: none;
+            }
+            .hero-area-content h1 {
+                font-size: 56px !important;
+                font-weight: 700 !important;
+                line-height: 1.2 !important;
+                background: linear-gradient(to right, #ffffff, #00f2fe) !important;
+                -webkit-background-clip: text !important;
+                -webkit-text-fill-color: transparent !important;
+                margin-bottom: 20px !important;
+            }
+            .hero-area-content p {
+                font-size: 18px !important;
+                color: #8b9bb4 !important;
+                line-height: 1.6 !important;
+                margin-bottom: 35px !important;
+            }
+
+            /* Premium Buttons */
+            .appao-btn {
+                background: linear-gradient(135deg, #0072ff 0%, #00f2fe 100%) !important;
+                border: none !important;
+                color: #ffffff !important;
+                font-weight: 600 !important;
+                letter-spacing: 0.5px !important;
+                border-radius: 30px !important;
+                padding: 12px 30px !important;
+                box-shadow: 0 4px 15px rgba(0, 242, 254, 0.3) !important;
+                transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+                margin-right: 15px !important;
+                display: inline-block;
+            }
+            .appao-btn:hover {
+                transform: translateY(-3px) scale(1.02) !important;
+                box-shadow: 0 6px 20px rgba(0, 242, 254, 0.5) !important;
+                color: #ffffff !important;
+            }
+
+            /* About/Card Area */
+            .about-area {
+                background: #0b0f17 !important;
+                padding: 100px 0 !important;
+            }
+            .sec-title h2 {
+                font-size: 38px !important;
+                font-weight: 700 !important;
+                color: #ffffff !important;
+            }
+            .sec-title-border span {
+                background: #00f2fe !important;
+            }
+            .sec-title p {
+                color: #8b9bb4 !important;
+                font-size: 16px !important;
+            }
+            .single-about-box {
+                background: rgba(255, 255, 255, 0.02) !important;
+                border: 1px solid rgba(255, 255, 255, 0.06) !important;
+                border-radius: 16px !important;
+                padding: 40px 30px !important;
+                transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+                box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2) !important;
+            }
+            .single-about-box:hover {
+                transform: translateY(-5px) !important;
+                background: rgba(255, 255, 255, 0.04) !important;
+                border-color: rgba(0, 242, 254, 0.3) !important;
+                box-shadow: 0 12px 40px 0 rgba(0, 242, 254, 0.15) !important;
+            }
+            .single-about-box.active {
+                background: rgba(0, 114, 255, 0.08) !important;
+                border-color: rgba(0, 242, 254, 0.4) !important;
+                box-shadow: 0 12px 40px 0 rgba(0, 242, 254, 0.2) !important;
+            }
+            .single-about-box i {
+                background: linear-gradient(135deg, #0072ff 0%, #00f2fe 100%) !important;
+                -webkit-background-clip: text !important;
+                -webkit-text-fill-color: transparent !important;
+                font-size: 48px !important;
+                margin-bottom: 20px;
+                display: inline-block;
+            }
+            .single-about-box h4 {
+                font-size: 22px !important;
+                font-weight: 600 !important;
+                margin-bottom: 15px !important;
+            }
+            .single-about-box p {
+                color: #8b9bb4 !important;
+                font-size: 15px !important;
+            }
+
+            /* Features Area */
+            .feature-area {
+                background: #0d121c !important;
+                padding: 100px 0 !important;
+            }
+            .feature-box-info h4 {
+                font-size: 20px !important;
+                font-weight: 600 !important;
+                color: #ffffff !important;
+            }
+            .feature-box-info p {
+                color: #8b9bb4 !important;
+            }
+            .feature-box-icon i {
+                color: #00f2fe !important;
+                font-size: 28px !important;
+                transition: transform 0.3s ease;
+            }
+            .single-feature-box ul li:hover .feature-box-icon i {
+                transform: scale(1.2);
+            }
+            .single-feature-box img {
+                filter: drop-shadow(0 10px 20px rgba(0, 242, 254, 0.2));
+            }
+
+            /* Footer area */
+            .footer {
+                background: #070a10 !important;
+                border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
+                padding: 40px 0 !important;
+            }
+            .copyright-area {
+                border: none !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            .copyright-area ul li a {
+                border-color: rgba(255, 255, 255, 0.1) !important;
+                color: #8b9bb4 !important;
+            }
+            .copyright-area ul li a:hover {
+                background: #00f2fe !important;
+                color: #0b0f17 !important;
+                border-color: #00f2fe !important;
+            }
         </style>
         <section class="hero-area" id="home">
 
